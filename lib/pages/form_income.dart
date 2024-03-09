@@ -24,7 +24,7 @@ class _FormIncomeState extends State<FormIncome> {
          ),
           title: const Text(
             "Formulario de Ingreso",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white, fontSize: 17.0),
           ),
           centerTitle: true,
         ),
@@ -43,7 +43,7 @@ class _FormIncomeState extends State<FormIncome> {
                   child: TextField(
                 decoration: InputDecoration(
                   focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.black45)),
+                  borderSide: BorderSide(color: Colors.black45)),
                   border: const OutlineInputBorder(),
                   labelStyle: const TextStyle(
                       color: Colors.black45, fontFamily: "RobotoMedium"),

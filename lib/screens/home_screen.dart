@@ -28,7 +28,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
   int _selectIndex = 0;
 
   final List<Widget> _pages = <Widget>[
-    HomePage(),
+    const HomePage(),
     const ListDbPage(),
   ];
 

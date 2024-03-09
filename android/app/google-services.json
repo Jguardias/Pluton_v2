@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "272235510156",
+    "project_id": "db-pluton-v2-99d40",
+    "storage_bucket": "db-pluton-v2-99d40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:272235510156:android:5ae94dc46e3b9a8a83bea9",
+        "android_client_info": {
+          "package_name": "com.example.pluton_v2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8UbJNKqgaIH7_rXZjFsq-HakVvNOf7bs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
