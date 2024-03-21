@@ -9,4 +9,9 @@ class IncomeProvider with ChangeNotifier {
     _income = value;
     notifyListeners();
   }
+
+    void summationIncome( double value) {
+    _income += value;
+    notifyListeners();
+  }
 }

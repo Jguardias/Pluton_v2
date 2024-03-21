@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pluton_v2/components/my_card.dart';
+import 'package:pluton_v2/components/my_card_component.dart';
+import 'package:pluton_v2/components/permissions_dialog_component.dart';
+import 'package:pluton_v2/providers/income_provider.dart';
 import 'package:pluton_v2/services/firebase_services.dart';
+import 'package:provider/provider.dart';
 
 class MyListTile extends StatefulWidget {
   final String title;
@@ -136,14 +139,28 @@ class _MyListTileState extends State<MyListTile> {
                   TextButton(
                     style: TextButton.styleFrom(
                         textStyle: Theme.of(context).textTheme.labelLarge,
-                        backgroundColor: Colors.red),
-                    onPressed: () async {
-                      await deleteElement(widget.title);
+                        backgroundColor: Colors.red.shade400),
+                    onPressed: ()  {
+                      dialogPermissions(context, widget.title);
+                    },
+                    child: const Text(
+                      'Eliminar',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  TextButton(
+                    style: TextButton.styleFrom(
+                        textStyle: Theme.of(context).textTheme.labelLarge,
+                        backgroundColor: Colors.deepPurple[400]),
+                    onPressed: () {
+                      context
+                          .read<IncomeProvider>()
+                          .summationIncome(widget.ingresoTotal);
                       if (!context.mounted) return;
                       Navigator.pop(context); // Cierra el diálogo
                     },
                     child: const Text(
-                      'Eliminar',
+                      'Enviar IT',
                       style: TextStyle(color: Colors.white),
                     ),
                   ),

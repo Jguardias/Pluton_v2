@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:pluton_v2/components/my_dialog.dart';
+import 'package:pluton_v2/components/my_dialog_component.dart';
 import 'package:pluton_v2/providers/income_provider.dart';
 import 'package:pluton_v2/utils/percentage_function.dart';
 import 'package:provider/provider.dart';
-import "package:pluton_v2/components/my_card.dart";
+import 'package:pluton_v2/components/my_card_component.dart';
 import 'package:pluton_v2/pages/form_income.dart';
 import 'package:intl/intl.dart';
 
@@ -63,15 +63,20 @@ class _HomePageState extends State<HomePage>
                             color: Colors.indigo.shade50,
                             fontSize: 19,
                             fontFamily: "RobotoBlack")),
-                    Text(
-                        context.watch<IncomeProvider>().income == 0
-                            ? " ---"
-                            : formattedNumber
-                                .format(context.watch<IncomeProvider>().income),
-                        style: TextStyle(
-                            color: Colors.indigo.shade50,
-                            fontSize: 35,
-                            fontFamily: "RobotoBlack")),
+                    GestureDetector(
+                      onTap: (){
+                        context.read<IncomeProvider>().updateIncome(0);
+                      },
+                      child: Text(
+                          context.watch<IncomeProvider>().income == 0
+                              ? " ---"
+                              : formattedNumber
+                                  .format(context.watch<IncomeProvider>().income),
+                          style: TextStyle(
+                              color: Colors.indigo.shade50,
+                              fontSize: 35,
+                              fontFamily: "RobotoBlack")),
+                    ),
                   ],
                 ),
                 const SizedBox(height: 10),

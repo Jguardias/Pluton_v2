@@ -1,7 +1,6 @@
 import 'package:animate_do/animate_do.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:pluton_v2/components/my_list_tile.dart';
+import 'package:pluton_v2/components/my_list_tile_component.dart';
 import 'package:pluton_v2/delegates/search_element_delegate.dart';
 import 'package:pluton_v2/services/firebase_services.dart';
 

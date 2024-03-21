@@ -24,9 +24,11 @@ void main() async {
   //splash
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
-  runApp(ChangeNotifierProvider(
+  runApp(MultiProvider(
     //provider
-    create: (_) => IncomeProvider(),
+    providers: [
+      ChangeNotifierProvider(create: (_) => IncomeProvider()),
+    ],
     //run App
     child: const MyApp(),
   ));
