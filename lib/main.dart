@@ -1,3 +1,4 @@
+import 'package:connection_notifier/connection_notifier.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:intl/date_symbol_data_local.dart';
@@ -24,13 +25,19 @@ void main() async {
   //splash
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+
   runApp(MultiProvider(
     //provider
     providers: [
       ChangeNotifierProvider(create: (_) => IncomeProvider()),
     ],
     //run App
-    child: const MyApp(),
+    child:  const ConnectionNotifier(
+      connectionNotificationOptions: ConnectionNotificationOptions(
+        disconnectedText: "Sin conexión a internet",
+        connectedText: "Conexión a internet restablecida"
+      ),
+      child: MyApp()),
   ));
   FlutterNativeSplash.remove();
 }
